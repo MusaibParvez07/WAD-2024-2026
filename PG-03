@@ -73,7 +73,7 @@ function validateForm() {
 
     // Name validation
     if (!nameRegex.test(fname)) {
-        alert("Name must contain at least 3 alphabets");
+        alert("Name must contain at least 3 alphabets and only Alphabets are allowed");
         return false;
     }
 
