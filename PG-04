@@ -1,0 +1,96 @@
+// Student Registration Form REGEX
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Registration</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<h2 class="bg-primary text-black text-center p-4 mb-3">
+    Student Registration
+</h2>
+
+<div class="container">
+<div class="card shadow-sm p-4 mx-auto" style="max-width: 600px;">
+
+<form onsubmit="return validateForm()">
+
+<label class="form-label">First Name:</label>
+<input type="text" class="form-control" id="fname">
+<span id="nameError" class="text-danger"></span>
+
+<label class="form-label mt-2">Last Name:</label>
+<input type="text" class="form-control" id="lname">
+
+<label class="form-label mt-2">USN:</label>
+<input type="text" class="form-control" id="usn">
+
+<label class="form-label mt-2">Email ID:</label>
+<input type="email" class="form-control" id="email">
+<span id="emailError" class="text-danger"></span>
+
+<label class="form-label mt-2">Phone No:</label>
+<input type="text" class="form-control" id="phone">
+<span id="phoneError" class="text-danger"></span>
+
+<label class="form-label mt-2">DOB:</label>
+<input type="date" class="form-control" id="dob" required>
+
+<label class="form-label mt-3">Gender:</label><br>
+<input type="radio" name="gender" required> Male<br>
+<input type="radio" name="gender"> Female<br>
+<input type="radio" name="gender"> Other<br>
+
+<label class="form-label mt-3">Course:</label><br>
+<input type="checkbox" name="course" value="MCA"> MCA<br>
+<input type="checkbox" name="course" value="MBA"> MBA<br>
+<input type="checkbox" name="course" value="MTech"> MTech<br>
+
+<button type="submit" class="btn btn-primary mt-3">Submit</button>
+<button type="reset" class="btn btn-secondary mt-3">Reset</button>
+
+</form>
+
+</div>
+</div>
+
+<script>
+function validateForm() {
+
+    let fname = document.getElementById("fname").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+
+    let nameRegex = /^[A-Za-z\s]{3,}$/;
+    let emailRegex = /^[A-Za-z0-9._+%-]+@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
+    let phoneRegex = /^[0-9]{10}$/;
+
+    // Name validation
+    if (!nameRegex.test(fname)) {
+        alert("Name must contain at least 3 alphabets");
+        return false;
+    }
+
+    // Email validation
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid Email ID");
+        return false;
+    }
+
+    // Phone validation
+    if (!phoneRegex.test(phone)) {
+        alert("Phone number must be exactly 10 digits");
+        return false;
+    }
+
+    alert("Registration Successful");
+    return true;
+}
+</script>
+
