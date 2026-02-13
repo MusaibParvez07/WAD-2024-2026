@@ -1,0 +1,45 @@
+// Insert values
+
+INSERT INTO Department VALUES
+('D1','Finance','E1','2018-01-01'),
+('D2','R&D','E2','2017-02-01'),
+('D3','HR','E3','2019-03-01');
+
+
+INSERT INTO Employee VALUES
+('E1','Ravi','Kumar','Bangalore',50000,'M','1990-01-10','D1',NULL),
+('E7','Arjun','Mehta','Mysore',90000,'M','1992-04-11','D1','E1'),
+('E2','Anita','Singh','Delhi',80000,'F','1989-02-12','D2','E1'),
+('E4','Deepthi','Sharma','Chennai',60000,'F','1993-06-20','D2','E2'),
+('E5','Rahul','Verma','Pune',65000,'M','1994-07-25','D2','E2'),
+('E6','Kiran','Joshi','Hyderabad',70000,'M','1995-08-30','D2','E2'),
+('E8','Sanjay','Das','Mumbai',72000,'M','1991-03-21','D2','E2'),
+('E3','Suresh','Patel','Mumbai',55000,'M','1992-05-15','D3','E1');
+
+INSERT INTO Dept_Location VALUES
+('D1','Bangalore'),
+('D2','Delhi'),
+('D2','Mumbai'),
+('D3','Chennai');
+
+INSERT INTO Project VALUES
+('P1','BankApp','Delhi','D1'),
+('P2','SolarAI','Mumbai','D2'),
+('P3','ResearchX','Delhi','D2'),
+('P4','ResearchX','Mumbai','D2'),
+('P5','HRPortal','Chennai','D3');
+
+INSERT INTO Works_on VALUES
+('E2','P2',4),
+('E2','P3',3),
+('E2','P4',3),
+('E4','P3',5),
+('E5','P3',6),
+('E6','P4',7),
+('E8','P4',8);
+
+INSERT INTO Dependent VALUES
+('E2','Neha','F','2015-01-01','Daughter'),
+('E2','Rohan','M','2018-02-02','Son');
+
+
