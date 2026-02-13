@@ -1,0 +1,50 @@
+// Create Tables
+
+CREATE TABLE Solar_Panel (
+    Pv_Module VARCHAR(10) PRIMARY KEY,
+    P_Type VARCHAR(20) NOT NULL,
+    Charges DECIMAL(10,2) NOT NULL,
+    Warranty INT NOT NULL,
+    Capacity INT NOT NULL
+);
+
+CREATE TABLE Vendor (
+    TIN VARCHAR(10) PRIMARY KEY,
+    Fname VARCHAR(20) NOT NULL,
+    Lname VARCHAR(20),
+    Contact BIGINT NOT NULL
+);
+
+CREATE TABLE User_Details (
+    User_Id VARCHAR(10) PRIMARY KEY,
+    Address VARCHAR(50) NOT NULL,
+    No_of_members INT NOT NULL
+);
+
+CREATE TABLE Sold_By (
+    TIN VARCHAR(10),
+    Pv_Module VARCHAR(10),
+    PRIMARY KEY (TIN, Pv_Module),
+    FOREIGN KEY (TIN) REFERENCES Vendor(TIN),
+    FOREIGN KEY (Pv_Module) REFERENCES Solar_Panel(Pv_Module)
+);
+
+CREATE TABLE Purchased_By (
+    User_Id VARCHAR(10),
+    Pv_Module VARCHAR(10),
+    PRIMARY KEY (User_Id, Pv_Module),
+    FOREIGN KEY (User_Id) REFERENCES User_Details(User_Id),
+    FOREIGN KEY (Pv_Module) REFERENCES Solar_Panel(Pv_Module)
+);
+
+CREATE TABLE Installed_By (
+    Pv_Module VARCHAR(10),
+    TIN VARCHAR(10),
+    User_Id VARCHAR(10),
+    Install_Type VARCHAR(20) NOT NULL,
+    Install_Date DATE NOT NULL,
+    PRIMARY KEY (Pv_Module, TIN, User_Id),
+    FOREIGN KEY (Pv_Module) REFERENCES Solar_Panel(Pv_Module),
+    FOREIGN KEY (TIN) REFERENCES Vendor(TIN),
+    FOREIGN KEY (User_Id) REFERENCES User_Details(User_Id)
+);
