@@ -22,14 +22,15 @@
 </header>
 
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-light shadow-sm">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="home.html">Home</a>
+        <a class="navbar-brand fw-bold" href="home.html">Online Bookstore</a>
 
-        <div>
-            <a class="nav-link d-inline" href="catalogue.html">Catalogue</a>
-            <a class="nav-link d-inline" href="profile.html">Profile</a>
-            <a class="nav-link d-inline" href="contact.html">Contact</a>
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link custom-link" href="home.html">Home</a>
+            <a class="nav-link custom-link" href="catalogue.html">Catalogue</a>
+            <a class="nav-link custom-link" href="profile.html">Profile</a>
+            <a class="nav-link custom-link" href="contact.html">Contact</a>
         </div>
     </div>
 </nav>
