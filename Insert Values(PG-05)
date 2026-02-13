@@ -1,0 +1,44 @@
+// Insert Values
+
+INSERT INTO Solar_Panel VALUES
+('PV001','Monocrystalline',40000,15,5),
+('PV002','Polycrystalline',60000,25,15),
+('PV003','Monocrystalline',40000,15,20),
+('PV004','Polycrystalline',60000,25,25),
+('PV005','Monocrystalline',40000,15,18),
+('PV006','Polycrystalline',60000,25,22);
+
+INSERT INTO Vendor VALUES
+('TIN101','Ravi','Kumar',9876543210),
+('TIN102','Anita','Singh',9876543211),
+('TIN103','Suresh','Patel',9876543212);
+
+INSERT INTO User_Details VALUES
+('U01','Delhi',5),
+('U02','Mumbai',10),
+('U03','Bangalore',100),
+('U04','Chennai',50);
+
+INSERT INTO Sold_By VALUES
+('TIN101','PV001'),
+('TIN101','PV002'),
+('TIN102','PV003'),
+('TIN102','PV004'),
+('TIN103','PV005'),
+('TIN103','PV006');
+
+INSERT INTO Purchased_By VALUES
+('U01','PV001'),
+('U01','PV002'),
+('U02','PV003'),
+('U03','PV004'),
+('U03','PV005'),
+('U04','PV006');
+
+INSERT INTO Installed_By VALUES
+('PV001','TIN101','U01','Domestic','2018-05-10'),
+('PV002','TIN101','U01','Domestic','2019-06-15'),
+('PV003','TIN102','U02','Commercial','2017-03-20'),
+('PV004','TIN102','U03','Commercial','2016-01-25'),
+('PV005','TIN103','U03','Commercial','2016-11-05'),
+('PV006','TIN103','U04','Domestic','2020-07-12');
