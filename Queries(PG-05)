@@ -1,0 +1,47 @@
+// Queries for Program5
+
+SELECT v.Fname AS Name, i.Install_Type
+FROM Vendor v
+JOIN Installed_By i ON v.TIN = i.TIN
+WHERE i.Install_Type = 'Domestic'
+GROUP BY v.TIN
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+
+
+SELECT u.Address, s.Capacity
+FROM User_Details u
+JOIN Installed_By i ON u.User_Id = i.User_Id
+JOIN Solar_Panel s ON i.Pv_Module = s.Pv_Module
+WHERE s.Capacity =
+      (SELECT MAX(Capacity) FROM Solar_Panel);
+
+
+SELECT DISTINCT u.Address AS Area, s.P_Type
+FROM User_Details u
+JOIN Installed_By i ON u.User_Id = i.User_Id
+JOIN Solar_Panel s ON i.Pv_Module = s.Pv_Module
+WHERE s.P_Type = 'Monocrystalline';
+
+
+SELECT u.Address AS Area, SUM(s.Charges) AS Total_Charges
+FROM User_Details u
+JOIN Installed_By i ON u.User_Id = i.User_Id
+JOIN Solar_Panel s ON i.Pv_Module = s.Pv_Module
+WHERE u.Address = 'Delhi'
+GROUP BY u.Address;
+
+
+SELECT v.Fname, s.Pv_Module, s.P_Type, i.Install_Date
+FROM Installed_By i
+JOIN Vendor v ON i.TIN = v.TIN
+JOIN Solar_Panel s ON i.Pv_Module = s.Pv_Module
+WHERE i.Install_Date =
+      (SELECT MIN(Install_Date) FROM Installed_By);
+
+
+SELECT s.P_Type, AVG(s.Charges) AS Avg_Installation_Charge
+FROM Solar_Panel s
+JOIN Installed_By i ON s.Pv_Module = i.Pv_Module
+WHERE i.Install_Type = 'Commercial'
+GROUP BY s.P_Type;
