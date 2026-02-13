@@ -22,3 +22,40 @@ h2 {
 .nav-link:hover {
     text-decoration: underline;
 }
+
+/* Navbar Styling */
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.custom-link {
+    margin-left: 20px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #333 !important;
+    position: relative;
+}
+
+/* Hover underline animation */
+.custom-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: #007BFF;
+    transition: width 0.3s;
+}
+
+.custom-link:hover::after {
+    width: 100%;
+}
+
+/* Active page highlight */
+.custom-link.active {
+    color: #007BFF !important;
+    font-weight: 600;
+}
+
