@@ -1,0 +1,64 @@
+// create tables
+
+CREATE TABLE Department (
+    Deptno VARCHAR(10) PRIMARY KEY,
+    Deptname VARCHAR(10) NOT NULL,
+    Mssn VARCHAR(10),
+    Mstartdate DATE
+);
+
+
+CREATE TABLE Employee (
+    SSN VARCHAR(10) PRIMARY KEY,
+    Fname VARCHAR(20) NOT NULL,
+    Lname VARCHAR(20),
+    Address VARCHAR(30),
+    Esalary DECIMAL(10,2),
+    Esex CHAR(1),
+    Edob DATE,
+    Deptno VARCHAR(10) NOT NULL,
+    Sssn VARCHAR(10),
+    FOREIGN KEY (Deptno) REFERENCES Department(Deptno),
+    FOREIGN KEY (Sssn) REFERENCES Employee(SSN)
+);
+
+
+CREATE TABLE Project (
+    Prjno VARCHAR(10) PRIMARY KEY,
+    Prjname VARCHAR(30) NOT NULL,
+    Location VARCHAR(30),
+    Deptno VARCHAR(10) NOT NULL,
+    FOREIGN KEY (Deptno) REFERENCES Department(Deptno)
+);
+
+
+CREATE TABLE Dept_Location (
+    Deptno VARCHAR(10) NOT NULL,
+    Dept_Location VARCHAR(30) NOT NULL,
+    PRIMARY KEY (Deptno, Dept_Location),
+    FOREIGN KEY (Deptno) REFERENCES Department(Deptno)
+);
+
+
+CREATE TABLE Works_on (
+    SSN VARCHAR(10) NOT NULL,
+    Prjno VARCHAR(10) NOT NULL,
+    Hours DECIMAL(4,1),
+    PRIMARY KEY (SSN, Prjno),
+    FOREIGN KEY (SSN) REFERENCES Employee(SSN),
+    FOREIGN KEY (Prjno) REFERENCES Project(Prjno)
+);
+
+CREATE TABLE Dependent (
+    SSN VARCHAR(10) NOT NULL,
+    Depname VARCHAR(20) NOT NULL,
+    Depsex CHAR(1),
+    Depdob DATE,
+    Relationship VARCHAR(10),
+    PRIMARY KEY (SSN, Depname),
+    FOREIGN KEY (SSN) REFERENCES Employee(SSN)
+);
+
+
+ALTER TABLE Department
+ADD FOREIGN KEY (Mssn) REFERENCES Employee(SSN);
