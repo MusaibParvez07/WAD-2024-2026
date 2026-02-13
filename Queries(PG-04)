@@ -1,0 +1,61 @@
+// Program4 Queries
+
+SELECT Fname, Lname, Deptname
+FROM Employee E, Department D
+WHERE E.Deptno = D.Deptno
+AND Deptname='Finance'
+AND Esalary >
+    (SELECT AVG(Esalary)
+     FROM Employee
+     WHERE Deptno='D1');
+
+
+SELECT Fname, Lname, Deptname, Esalary
+FROM Employee E, Department D
+WHERE E.Deptno = D.Deptno
+AND Deptname='R&D'
+AND E.SSN IN (
+    SELECT SSN
+    FROM Works_on
+    GROUP BY SSN
+    HAVING COUNT(*) > 2
+);
+
+
+SELECT P.Prjno, P.Prjname, D.Deptname
+FROM Project P, Department D
+WHERE P.Deptno = D.Deptno;
+
+
+SELECT S.SSN, S.Fname
+FROM Employee S
+WHERE S.SSN IN (
+    SELECT Sssn
+    FROM Employee
+    GROUP BY Sssn
+    HAVING COUNT(*) > 3
+);
+
+
+SELECT Depname
+FROM Dependent
+WHERE SSN IN (
+    SELECT SSN
+    FROM Works_on
+    GROUP BY SSN
+    HAVING SUM(Hours) >= 10
+);
+
+
+SELECT DISTINCT E.SSN, E.Fname, D.Deptno, P.Prjname, P.Location
+FROM Employee E, Department D, Project P, Works_on W
+WHERE E.Deptno = D.Deptno
+AND E.SSN = W.SSN
+AND W.Prjno = P.Prjno
+AND P.Prjname IN (
+    SELECT Prjname
+    FROM Project
+    GROUP BY Prjname
+    HAVING COUNT(DISTINCT Location) > 1
+);
+
