@@ -27,7 +27,7 @@
 <body class="bg-light">
 
 <!-- Header (same as home.html) -->
-<header class="bg-primary text-white text-center p-4 mb-3">
+<header class="bg-primary text-white text-center p-4">
   <h1>Online Bookstore</h1>
   <p>Browse books from Programming and Finance categories.</p>
 </header>
