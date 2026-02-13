@@ -24,7 +24,7 @@
 <body class="bg-light">
 
 <!-- Header -->
-<header class="bg-primary text-white text-center p-4 mb-3">
+<header class="bg-primary text-white text-center p-4">
   <h1>Online Bookstore</h1>
 </header>
 
