@@ -1,0 +1,138 @@
+// catalogue
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online Bookstore - Catalogue</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .nav-link {
+      font-weight: 600;
+      margin-right: 10px;
+      color: #ffffff !important;
+    }
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+    .book-card img {
+      height: 180px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+
+<!-- Header (same as home.html) -->
+<header class="bg-primary text-white text-center p-4 mb-3">
+  <h1>Online Bookstore</h1>
+  <p>Browse books from Programming and Finance categories.</p>
+</header>
+
+<!-- Navbar (same as home.html) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse show">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="catalogue.html">Catalogue</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-4">
+
+  <!-- Programming Section -->
+  <h3 class="mb-4">Programming Books</h3>
+  <div class="row g-4">
+
+    <!-- Book 1 -->
+    <div class="col-md-4">
+      <div class="card book-card shadow-sm">
+        <img src="https://picsum.photos/seed/java/400/250" class="card-img-top" alt="OOPS with Java">
+        <div class="card-body">
+          <h5 class="card-title">OOPS with Java</h5>
+          <p class="card-text">Author: Pat</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book 2 -->
+    <div class="col-md-4">
+      <div class="card book-card shadow-sm">
+        <img src="https://picsum.photos/seed/cpp/400/250" class="card-img-top" alt="C++ Fundamentals">
+        <div class="card-body">
+          <h5 class="card-title">C++ Fundamentals</h5>
+          <p class="card-text">Author: Josh</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book 3 -->
+    <div class="col-md-4">
+      <div class="card book-card shadow-sm">
+        <img src="https://picsum.photos/seed/aiml/400/250" class="card-img-top" alt="AI/ML">
+        <div class="card-body">
+          <h5 class="card-title">AI / ML</h5>
+          <p class="card-text">Author: Dave</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Finance Section -->
+  <h3 class="mt-5 mb-4">Finance Books</h3>
+  <div class="row g-4">
+
+    <!-- Book 4 -->
+    <div class="col-md-4">
+      <div class="card book-card shadow-sm">
+        <img src="https://picsum.photos/seed/stocks/400/250" class="card-img-top" alt="Stock Strategies">
+        <div class="card-body">
+          <h5 class="card-title">Stock Strategies</h5>
+          <p class="card-text">Author: Henry</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book 5 -->
+    <div class="col-md-4">
+      <div class="card book-card shadow-sm">
+        <img src="https://picsum.photos/seed/affiliate/400/250" class="card-img-top" alt="Affiliate Success">
+        <div class="card-body">
+          <h5 class="card-title">Affiliate Success</h5>
+          <p class="card-text">Author: Glenn</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book 6 -->
+    <div class="col-md-4">
+      <div class="card book-card shadow-sm">
+        <img src="https://picsum.photos/seed/money/400/250" class="card-img-top" alt="Money Growth Hacks">
+        <div class="card-body">
+          <h5 class="card-title">Money Growth Hacks</h5>
+          <p class="card-text">Author: Liam</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer class="bg-dark text-white text-center py-3 mt-4">
+  <p>&copy; Online Bookstore 2025-26. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
