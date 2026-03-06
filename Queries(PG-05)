@@ -1,5 +1,3 @@
-// Queries for Program5
-
 SELECT v.Fname AS Name, i.Install_Type
 FROM Vendor v
 JOIN Installed_By i ON v.TIN = i.TIN
