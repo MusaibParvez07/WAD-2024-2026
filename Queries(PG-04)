@@ -1,5 +1,3 @@
-// Program4 Queries
-
 SELECT Fname, Lname, Deptname
 FROM Employee E, Department D
 WHERE E.Deptno = D.Deptno
