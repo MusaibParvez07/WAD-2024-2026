@@ -1,5 +1,3 @@
-// Insert Values
-
 INSERT INTO Solar_Panel VALUES
 ('PV001','Monocrystalline',40000,15,5),
 ('PV002','Polycrystalline',60000,25,15),
